@@ -11,12 +11,12 @@ public class Screen implements ScreenInterface{
 	
 	private static final int BUTTON_MICRO = 0;
 	private static final int BUTTON_INITIALIZE = 1;
-	
+	/*
 	private static final String APX = "px";
 	private static final String APY = "py";
 	private static final String ASX = "sx";
 	private static final String ASY = "sy";
-	
+	*/
 	@Override
 	public void display(DisplaySystem ds) {
 		Point mouse = ds.getMousePosition();
@@ -24,25 +24,27 @@ public class Screen implements ScreenInterface{
 		ds.drawRect(0, 0, ds.getWidth(), ds.getHeight());
 		
 		ds.setColor(0, 0, 0);
+		ds.drawString("Use key \"pause attn\" (19) ", 10, 27);
+		ds.drawString("to control \"Voice chat\"", 20, 50);
 		if(onButton(mouse, getButtonPostition(ds, BUTTON_MICRO)))
 			ds.setColor(0, 255, 0);
 		ds.contourRect(getButtonPostition(ds, BUTTON_MICRO));
 		ds.setColor(0, 0, 0);
-		ds.drawString("Micro : ", 13, 27);
+		ds.drawString("Micro : ", 13, 77);
 		
 		if(MainChat.chatOn) {
 			ds.setColor(0, 255, 0);
-			ds.drawString("ON", 80, 27);
+			ds.drawString("ON", 80, 77);
 		} else {
 			ds.setColor(255, 0, 0);
-			ds.drawString("OFF", 80, 27);
+			ds.drawString("OFF", 80, 77);
 		}
 		
 		ds.setColor(0, 0, 0);
 		if(onButton(mouse, getButtonPostition(ds, BUTTON_INITIALIZE)))
 			ds.setColor(0, 0, 255);
 		ds.contourRect(getButtonPostition(ds, BUTTON_INITIALIZE));
-		ds.drawString("Initialize", 143, 27);
+		ds.drawString("Initialize", 143, 77);
 	}
 
 	@Override
@@ -113,12 +115,12 @@ public class Screen implements ScreenInterface{
 		
 		if(buttonNum == BUTTON_MICRO) {
 			tab[0] = 10;
-			tab[1] = 10;
+			tab[1] = 60;
 			tab[2] = 120;
 			tab[3] = 20;
 		} else if(buttonNum == BUTTON_INITIALIZE) {
 			tab[0] = 140;
-			tab[1] = 10;
+			tab[1] = 60;
 			tab[2] = 100;
 			tab[3] = 20;
 		}

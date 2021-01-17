@@ -38,7 +38,7 @@ public class DisplaySystem{
 		frame = new JFrame();
 //		frame.setResizable(true);
 		frame.setTitle("Test");
-		frame.setSize(300,80);
+		frame.setSize(300,130);
 		// full screen
 //		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 //		frame.setExtendedState(JFrame.ICONIFIED);

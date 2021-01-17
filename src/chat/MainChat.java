@@ -19,12 +19,15 @@ public class MainChat {
 			r = new Robot();
 		} catch (AWTException e1) {e1.printStackTrace();}
 		
+		int c = 0;
+		
 		while(true) {
+			c++;
 			try {
 				Thread.sleep(200);
 			} catch (InterruptedException e) {e.printStackTrace();}
 			
-			if(chatOn)
+			if(c % 5 == 0 && chatOn)
 				r.keyPress(19);
 			
 			ds.paint();
